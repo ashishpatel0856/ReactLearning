@@ -15,9 +15,8 @@ const Header = () => {
 
         {
           toggle ?
-           <CiMenuBurger onClick={() => setToggle(!toggle)} className='text-white text-2xl md:hidden block' />
-           :
-
+          <IoMdClose  onClick={() => setToggle(!toggle)} className='text-white text-2xl md:hidden block' /> 
+          :<CiMenuBurger onClick={() => setToggle(!toggle)} className='text-white text-2xl md:hidden block' />     
         }
          
         <ul className='hidden md:flex text-white gap-10'>
@@ -30,7 +29,8 @@ const Header = () => {
 
 
         {/* responsive menu */}
-          <ul className='md:hidden w-full h-screen text-white fixed bg-black top-[92px] left-[-100%]'>
+          <ul className={`duration-300 md:hidden w-full h-screen text-white fixed bg-black top-[92px] 
+            ${toggle ? 'left-[0]': 'left-[-100%]'}`}>
           <li className='p-3'>Home</li>
           <li className='p-3' >Company</li>
           <li className='p-3'>Resource</li>
