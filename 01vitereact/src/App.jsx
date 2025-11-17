@@ -6,8 +6,8 @@ const dummyProductData = ['product 1' , 'product 2','product 3']
 
 function App() {
   return (
-    <div>
-      <h1>React js concepts 2025</h1>
+    <div className='flex item-center'>
+      <h1 className='text-lg font-bold' >React js concepts 2025</h1>
        <ProductList listofproducts={dummyProductData} name ="ashish" city ="prayag"/>
     </div>
     

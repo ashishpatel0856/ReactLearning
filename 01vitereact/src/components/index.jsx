@@ -5,12 +5,12 @@ const dummyProductData = ['product 1' , 'product 2','product 3']
 const ProductList = ({name,city,listofproducts}) => {
   
   return (
-    <div>
-        <h3 className='text-lg font-bold'>Ecommerce Projects</h3>
+    <div >
+        <h3 className='text-xl font-bold '>Ecommerce Projects</h3>
         <h4>Name is {name}, he is belongs to {city}</h4>
 
         {/* <ProductItem/> */}
-        <ul>
+        <ul >
             {
                 listofproducts.map((item,index) =>(
                     // <li key={index}>{item}</li>
