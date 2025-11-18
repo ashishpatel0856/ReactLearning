@@ -1,27 +1,22 @@
 // import React from "react";
-// import ProductItem from "./components/product-item";
+// import ProductItem from "../product-item";
 
 // const ProductList = ({ name, city, listofproducts }) => {
-  
 //   const flag = false;
-
-//   function renderTextBlock(getFlag) {
-//     return getFlag ? (
-//       <h4>Name is {name}, he belongs to {city}</h4>
-//     ) : (
-//       <h2>Hello world</h2>
-//     );
-//   }
 
 //   return (
 //     <div>
 //       <h3 className="text-xl font-bold">Ecommerce Projects</h3>
 
-//       {renderTextBlock(flag)}
+//       {flag ? (
+//         <h4>Name is {name}, he belongs to {city}</h4>
+//       ) : (
+//         <h2>Hello world</h2>
+//       )}
 
 //       <ul>
 //         {listofproducts.map((item, index) => (
-//           <ProductItem singleProductItem={item} key={index} id={index + 1} />
+//           <ProductItem key={index} id={index + 1} item={item} />
 //         ))}
 //       </ul>
 //     </div>

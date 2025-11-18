@@ -1,17 +1,26 @@
-import { useState } from 'react'
-import Index from './components'
-import ProductList from './components'
+import React from "react";
 
-const dummyProductData = ['product 1' , 'product 2','product 3']
+// import ClassBasedComponent from "./components/class-based-component";
+// import ProductList from "./components/Products/ProductList";
+import Basics from "./components/Basics";
+
+const dummyProductData = ["product 1", "product 2", "product 3"];
 
 function App() {
   return (
-    <div className='flex item-center'>
-      <h1 className='text-lg font-bold' >React js concepts 2025</h1>
-       <ProductList listofproducts={dummyProductData} name ="ashish" city ="prayag"/>
-    </div>
-    
-  )
+    <>
+    <Basics />
+      {/* <h1 className="text-lg font-bold">React JS Concepts 2025</h1> */}
+{/* 
+      <ClassBasedComponent />
+
+      <ProductList
+        name="ashish"
+        city="prayag"
+        listofproducts={dummyProductData}
+      /> */}
+    </>
+  );
 }
 
-export default App
+export default App;
