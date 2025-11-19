@@ -3,6 +3,8 @@ import React from "react";
 // import ProductList from "./components/Products/ProductList";
 import Basics from "./components/Basics";
 import UserList from "./components/users/UserList";
+import ContextButtonComponent from "./components/context-concept/button";
+import ContextTextComponent from "./components/context-concept/text";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
@@ -21,6 +23,8 @@ function App() {
          listofproducts={dummyProductData}  />  */}
 
       {/* <UserList /> */}
+      <ContextButtonComponent />
+      <ContextTextComponent />
     </div>
   );
 }
