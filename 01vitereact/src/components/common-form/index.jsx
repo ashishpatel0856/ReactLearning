@@ -1,9 +1,13 @@
 import React from 'react'
 
-const index = () => {
+const CommonForm= ({ formControls = [] }) => {
   return (
-    <div>index</div>
+    <div>
+        <form>
+
+        </form>
+    </div>
   )
 }
 
-export default index
+export default CommonForm;
