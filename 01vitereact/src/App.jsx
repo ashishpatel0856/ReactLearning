@@ -35,7 +35,7 @@ function App() {
 
       {/* <FormComponent /> */}
       <div className="flex items-center justify-center gap-20 mt-20">
-        <RegisterComponent />
+      <RegisterComponent />
       <LoginComponent />
       </div>
     </div>

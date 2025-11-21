@@ -3,7 +3,7 @@ import React from 'react'
 const CommonInput = ({label,onChange,type,name,id,value,placeholder}) => {
   return (
     <div>
-        <lavel htmlFor={{name}} >{label}</lavel>
+        <label htmlFor={{name}} >{label}</label>
         <input 
         name={name}
         id={id}
