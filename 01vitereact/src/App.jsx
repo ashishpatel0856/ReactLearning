@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 
 // import ProductList from "./components/Products/ProductList";
 import Basics from "./components/Basics";
@@ -9,7 +9,7 @@ import UseReducerExample from "./components/user-reducer-example";
 import FormComponent from "./components/Form/Form";
 import RegisterComponent from "./components/register";
 import LoginComponent from "./components/login";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, useRoutes } from "react-router-dom";
 import RecipeList from "./components/pages/Recipes";
 import CommentList from "./components/pages/Comments";
 import RecipeDetailsPage from "./components/pages/RecipeDetailsPage";
@@ -17,6 +17,23 @@ import NotFound from "./components/pages/NotFound";
 import Layout from "./Navbar/Layout";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
+
+function CustomRoutes() {
+  const element = useRoutes([
+    {
+      path: "/home",
+      element: <Layout />,
+      children: [
+        { path: "recipe-list", element: <RecipeList /> },
+        { path: "comment-list", element: <CommentList /> },
+        { path: "recipe-list/:id", element: <RecipeDetailsPage /> }
+      ]
+    },
+    { path: "*", element: <NotFound /> }
+  ]);
+
+  return element;
+}
 
 function App() {
 
@@ -29,14 +46,14 @@ function App() {
       <h1>React routing,custom hooks and more</h1>
 
       <div>
-        <Link to={'/recipe-list'}>
+        <Link to={'/home/recipe-list'}>
         Alternative way of navigating to recipe list page
         </Link>
       </div>
 
-      <button onClick={() => navigate('/recipe-list')} className="  bg-black text-amber-50">Navigate to Recipe List page</button>
+      <button onClick={() => navigate('/home/recipe-list')} className="  bg-black text-amber-50">Navigate to Recipe List page</button>
 
-      <button onClick={() => navigate('/comment-list')} className="gap-4 ml-8 bg-red-500 text-amber-50">Navigate to Comment List page</button>
+      <button onClick={() => navigate('/home/comment-list')} className="gap-4 ml-8 bg-red-500 text-amber-50">Navigate to Comment List page</button>
 
       {/* <Basics /> */}
 
@@ -61,7 +78,7 @@ function App() {
       </div> */}
 
 
-      <Routes>
+      {/* <Routes>
 
         <Route path="/home" element={<Layout/>}>
          <Route path="recipe-list" element={<RecipeList />} />
@@ -70,7 +87,8 @@ function App() {
         </Route>
 
         <Route path="*" element={<NotFound />}/>
-      </Routes>
+      </Routes> */}
+      <CustomRoutes/>
     </div>
   );
 }
