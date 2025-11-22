@@ -9,18 +9,38 @@ import UseReducerExample from "./components/user-reducer-example";
 import FormComponent from "./components/Form/Form";
 import RegisterComponent from "./components/register";
 import LoginComponent from "./components/login";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import RecipeList from "./components/pages/Recipes";
+import CommentList from "./components/pages/Comments";
+import RecipeDetailsPage from "./components/pages/RecipeDetailsPage";
+import NotFound from "./components/pages/NotFound";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
 function App() {
+
+  const navigate = useNavigate();
   return (
     <div>
-   <h1 className="text-lg font-bold flex justify-center mt-16">React JS Concepts 2025</h1> 
+      <h1 className="text-lg font-bold flex justify-center mt-16">React JS Concepts 2025</h1>
 
-    {/* <Basics /> */}
+      <br />
+      <h1>React routing,custom hooks and more</h1>
+
+      <div>
+        <Link to={'/recipe-list'}>
+        Alternative way of navigating to recipe list page
+        </Link>
+      </div>
+
+      <button onClick={() => navigate('/recipe-list')} className="  bg-black text-amber-50">Navigate to Recipe List page</button>
+
+      <button onClick={() => navigate('/comment-list')} className="gap-4 ml-8 bg-red-500 text-amber-50">Navigate to Comment List page</button>
+
+      {/* <Basics /> */}
 
 
-{/*       
+      {/*       
       <ProductList
         name="ashish" 
          city="prayag" 
@@ -34,10 +54,18 @@ function App() {
       {/* <UseReducerExample /> */}
 
       {/* <FormComponent /> */}
-      <div className="flex items-center justify-center gap-20 mt-20">
+      {/* <div className="flex items-center justify-center gap-20 mt-20">
       <RegisterComponent />
       <LoginComponent />
-      </div>
+      </div> */}
+
+
+      <Routes>
+        <Route path="/recipe-list" element={<RecipeList />} />
+        <Route path="/comment-list" element={<CommentList />} />
+        <Route path="/recipe-list/:id" element={<RecipeDetailsPage/>}/>
+        <Route path="*" element={<NotFound />}/>
+      </Routes>
     </div>
   );
 }
