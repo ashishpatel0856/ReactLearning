@@ -14,6 +14,7 @@ import RecipeList from "./components/pages/Recipes";
 import CommentList from "./components/pages/Comments";
 import RecipeDetailsPage from "./components/pages/RecipeDetailsPage";
 import NotFound from "./components/pages/NotFound";
+import Layout from "./Navbar/Layout";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
@@ -61,9 +62,13 @@ function App() {
 
 
       <Routes>
-        <Route path="/recipe-list" element={<RecipeList />} />
-        <Route path="/comment-list" element={<CommentList />} />
-        <Route path="/recipe-list/:id" element={<RecipeDetailsPage/>}/>
+
+        <Route path="/home" element={<Layout/>}>
+         <Route path="recipe-list" element={<RecipeList />} />
+        <Route path="comment-list" element={<CommentList />} />
+        <Route path="recipe-list/:id" element={<RecipeDetailsPage/>}/>
+        </Route>
+
         <Route path="*" element={<NotFound />}/>
       </Routes>
     </div>
