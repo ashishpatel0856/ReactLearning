@@ -19,6 +19,7 @@ import ReactHookFormExamplePage from "./components/pages/ReactHookFormExamplePag
 import Hooks from "./components/pages/hooks/Hooks";
 import UseMemohook from "./components/pages/hooks/UseMemohook";
 import UseCallbackExample from "./components/pages/hooks/UseCallbackExample";
+import { ReactQueryDemo } from "./components/Reactquery/ReactQueryDemo";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
@@ -56,9 +57,12 @@ function CustomRoutes() {
      {
       path : '/usecallback',
       element : <UseCallbackExample/>
-     }
+     },
 
-     
+     {
+      path : '/tanstack-query',
+      element : <ReactQueryDemo/>
+     }
   ]);
   
 
