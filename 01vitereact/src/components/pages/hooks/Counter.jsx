@@ -1,0 +1,12 @@
+import React from 'react'
+
+const Counter = ({countValue,onClick}) => {
+  return (
+    <div>
+        <p>{countValue}</p>
+        <button onClick={onClick}>Click</button>
+    </div>
+  )
+}
+
+export default Counter

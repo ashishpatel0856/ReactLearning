@@ -18,6 +18,7 @@ import Layout from "./Navbar/Layout";
 import ReactHookFormExamplePage from "./components/pages/ReactHookFormExamplePage";
 import Hooks from "./components/pages/hooks/Hooks";
 import UseMemohook from "./components/pages/hooks/UseMemohook";
+import UseCallbackExample from "./components/pages/hooks/UseCallbackExample";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
@@ -51,6 +52,11 @@ function CustomRoutes() {
       path : '/memo',
       element : <UseMemohook />
      },
+
+     {
+      path : '/usecallback',
+      element : <UseCallbackExample/>
+     }
 
      
   ]);
