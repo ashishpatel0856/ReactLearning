@@ -16,6 +16,8 @@ import RecipeDetailsPage from "./components/pages/RecipeDetailsPage";
 import NotFound from "./components/pages/NotFound";  
 import Layout from "./Navbar/Layout"; 
 import ReactHookFormExamplePage from "./components/pages/ReactHookFormExamplePage";
+import Hooks from "./components/pages/hooks/Hooks";
+import UseMemohook from "./components/pages/hooks/UseMemohook";
 
 // const dummyProductData = ["product 1", "product 2", "product 3"];
 
@@ -28,8 +30,9 @@ function CustomRoutes() {
         { path: "recipe-list", element: <RecipeList /> },
         { path: "comment-list", element: <CommentList /> },
         { path: "recipe-list/:id", element: <RecipeDetailsPage /> }
-      ]
+      ],
     },
+
     { 
       path: "*", element: <NotFound />
      },
@@ -38,6 +41,18 @@ function CustomRoutes() {
       path : '/react-hook-form',
       element : <ReactHookFormExamplePage />,
      },
+
+     {
+      path : '/hooks',
+      element : <Hooks/>
+     },
+
+     {
+      path : '/memo',
+      element : <UseMemohook />
+     },
+
+     
   ]);
   
 
